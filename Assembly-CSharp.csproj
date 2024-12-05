@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\finish.cs" />
     <Compile Include="Assets\Scripts\Spawn.cs" />
     <Compile Include="Assets\Scripts\Jeep.cs" />
+    <Compile Include="Assets\Scripts\FollowCamera.cs" />
     <Compile Include="Assets\Scripts\Coldown.cs" />
     <Compile Include="Assets\Scripts\character.cs" />
   </ItemGroup>

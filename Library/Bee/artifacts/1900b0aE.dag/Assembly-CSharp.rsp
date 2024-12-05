@@ -413,6 +413,7 @@
 "Assets/Scripts/character.cs"
 "Assets/Scripts/Coldown.cs"
 "Assets/Scripts/finish.cs"
+"Assets/Scripts/FollowCamera.cs"
 "Assets/Scripts/Jeep.cs"
 "Assets/Scripts/Spawn.cs"
 -langversion:9.0
