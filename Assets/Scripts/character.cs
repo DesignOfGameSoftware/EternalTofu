@@ -15,6 +15,7 @@ public class Character : MonoBehaviour
     private bool jumpKeyReleased;    // 점프 키가 떼어졌는지 확인
 
     private Vector3 initialPosition = new Vector3(-19.64f, 2.69f, -4.13f); // 최초 위치
+    private Quaternion initialRotation;  // 초기 회전값
     private Vector3 originalScale;   // 캐릭터의 원래 크기
     private Vector3 jumpSquashScale; // 점프 준비 시 크기
     private Vector3 jumpStretchScale; // 점프 시 크기
@@ -27,6 +28,8 @@ public class Character : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         mTransform = transform;
         mTransform.position = initialPosition; // 시작 위치 설정
+
+        initialRotation = mTransform.rotation; // 초기 회전값 저장
 
         // 캐릭터 크기 설정
         originalScale = mTransform.localScale; // 원래 크기 저장
@@ -55,6 +58,15 @@ public class Character : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             mTransform.Translate(new Vector3(0, 0, -speed) * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.R))
+        {
+            // 레벨에 따른 Y축 위치 계산 (레벨 1일 때 Y값 2.69, 그 후 100씩 증가)
+            float levelBasedY = initialPosition.y + (level - 1) * 100f;
+
+            // 최초 위치로 돌아가면서 레벨에 맞는 Y축 위치로 설정
+            mTransform.position = new Vector3(initialPosition.x, levelBasedY, initialPosition.z);
+            mTransform.rotation = initialRotation;
         }
 
         // 점프 처리
@@ -121,7 +133,7 @@ public class Character : MonoBehaviour
             UpdateLevelText();  // 레벨 텍스트 업데이트
 
             // 캐릭터 위치 이동 (Y축 +100)
-            Vector3 finishPosition = new Vector3(-19.64f, mTransform.position.y + 100f, -4.13f);
+            Vector3 finishPosition = new Vector3(-19.64f, mTransform.position.y + 200f, -4.13f);
             mTransform.position = finishPosition;
         }
     }

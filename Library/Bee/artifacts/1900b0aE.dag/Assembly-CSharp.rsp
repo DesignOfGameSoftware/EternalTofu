@@ -412,6 +412,7 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/6000.0.28f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll"
 "Assets/Scripts/character.cs"
 "Assets/Scripts/Coldown.cs"
+"Assets/Scripts/ColliderAdder.cs"
 "Assets/Scripts/finish.cs"
 "Assets/Scripts/FollowCamera.cs"
 "Assets/Scripts/Jeep.cs"
