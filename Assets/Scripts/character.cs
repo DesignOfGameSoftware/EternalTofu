@@ -65,7 +65,7 @@ public class Character : MonoBehaviour
             float levelBasedY = initialPosition.y + (level - 1) * 100f;
 
             // 최초 위치로 돌아가면서 레벨에 맞는 Y축 위치로 설정
-            mTransform.position = new Vector3(initialPosition.x, levelBasedY, initialPosition.z);
+            mTransform.position = new Vector3(initialPosition.x, levelBasedY+10, initialPosition.z);
             mTransform.rotation = initialRotation;
         }
 
@@ -133,7 +133,7 @@ public class Character : MonoBehaviour
             UpdateLevelText();  // 레벨 텍스트 업데이트
 
             // 캐릭터 위치 이동 (Y축 +100)
-            Vector3 finishPosition = new Vector3(-19.64f, mTransform.position.y + 200f, -4.13f);
+            Vector3 finishPosition = new Vector3(-19.64f, mTransform.position.y + 120f, -4.13f);
             mTransform.position = finishPosition;
         }
     }
