@@ -14,7 +14,7 @@ public class Character : MonoBehaviour
     private bool isJumping;          // 점프 중인지 확인
     private bool jumpKeyReleased;    // 점프 키가 떼어졌는지 확인
 
-    private Vector3 initialPosition = new Vector3(-19.64f, 2.69f, -4.13f); // 최초 위치
+    private Vector3 initialPosition = new Vector3(-19.64f, 2.69f+200f, -4.13f); // 최초 위치
     private Quaternion initialRotation;  // 초기 회전값
     private Vector3 originalScale;   // 캐릭터의 원래 크기
     private Vector3 jumpSquashScale; // 점프 준비 시 크기
