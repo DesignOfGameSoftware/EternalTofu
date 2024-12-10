@@ -42,7 +42,7 @@ namespace UnityEditor.U2D.Sprites
             }
         }
         event Action<ISpriteEditorDataProvider> m_OnSpriteEditorDataChangeCallback = _ => { };
-        SpriteImportMode ISpriteEditorDataProvider.spriteImportMode => originalSpriteEditorDataProvider.spriteImportMode;
+        public SpriteImportMode spriteImportMode => originalSpriteEditorDataProvider.spriteImportMode;
         public float pixelsPerUnit => originalSpriteEditorDataProvider.pixelsPerUnit;
         public UnityObject targetObject => originalSpriteEditorDataProvider.targetObject;
 

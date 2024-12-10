@@ -14,7 +14,7 @@ public class Character : MonoBehaviour
     private bool isJumping;          // 점프 중인지 확인
     private bool jumpKeyReleased;    // 점프 키가 떼어졌는지 확인
 
-    private Vector3 initialPosition = new Vector3(-19.64f, 2.69f+200f, -4.13f); // 최초 위치
+    private Vector3 initialPosition = new Vector3(-19.64f, 7f, -4.13f); // 최초 위치
     private Quaternion initialRotation;  // 초기 회전값
     private Vector3 originalScale;   // 캐릭터의 원래 크기
     private Vector3 jumpSquashScale; // 점프 준비 시 크기
@@ -65,7 +65,11 @@ public class Character : MonoBehaviour
             float levelBasedY = initialPosition.y + (level - 1) * 100f;
 
             // 최초 위치로 돌아가면서 레벨에 맞는 Y축 위치로 설정
-            mTransform.position = new Vector3(initialPosition.x, levelBasedY+10, initialPosition.z);
+            mTransform.position = new Vector3(initialPosition.x, levelBasedY, initialPosition.z);
+            mTransform.rotation = initialRotation;
+        }
+        if (Input.GetKey(KeyCode.E))
+        {
             mTransform.rotation = initialRotation;
         }
 
@@ -123,7 +127,8 @@ public class Character : MonoBehaviour
     {
         if (other.CompareTag("Jeep"))
         {
-            Vector3 newPos = new Vector3(-20, 3, -1);
+            float levelBasedY = initialPosition.y + (level - 1) * 100f;
+            Vector3 newPos = new Vector3(-20, levelBasedY, -1);
             mTransform.position = newPos;
         }
         else if (other.CompareTag("Finish")) // 'Finish' 태그에 도달했을 때
@@ -133,7 +138,7 @@ public class Character : MonoBehaviour
             UpdateLevelText();  // 레벨 텍스트 업데이트
 
             // 캐릭터 위치 이동 (Y축 +100)
-            Vector3 finishPosition = new Vector3(-19.64f, mTransform.position.y + 120f, -4.13f);
+            Vector3 finishPosition = new Vector3(-19.64f, mTransform.position.y + 100f, -4.13f);
             mTransform.position = finishPosition;
         }
     }

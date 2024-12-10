@@ -13,12 +13,6 @@ namespace UnityEditor.U2D.Sprites
         // overrides for SpriteFrameModuleBase
         public override void DoMainGUI()
         {
-            // Beautification. Run ValidateSpriteRects only when window is presented.
-            if(!m_SpriteRectValidated)
-            {
-                EditorApplication.delayCall += ValidateSpriteRects;
-            }
-
             // Do nothing when extension is activated.
             if (m_CurrentMode != null)
             {

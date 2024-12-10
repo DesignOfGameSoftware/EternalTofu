@@ -1256,7 +1256,7 @@ namespace TMPro
                         m_sharedMaterial = m_fontAsset.material;
                 }
             }
-
+            
             // Cache environment map property validation.
             ValidateEnvMapProperty();
 
@@ -1323,7 +1323,7 @@ namespace TMPro
             if (m_currentEnvMapRotation == rotation)
                 return;
             #endif
-
+            
             m_currentEnvMapRotation = rotation;
             m_EnvMapMatrix = Matrix4x4.TRS(Vector3.zero, Quaternion.Euler(m_currentEnvMapRotation), Vector3.one);
 
@@ -1726,7 +1726,6 @@ namespace TMPro
         }
 
 
-        Dictionary<int, int> materialIndexPairs = new Dictionary<int, int>();
         // This function parses through the Char[] to determine how many characters will be visible. It then makes sure the arrays are large enough for all those characters.
         internal override int SetArraySizes(TextProcessingElement[] textProcessingArray)
         {
@@ -2150,21 +2149,6 @@ namespace TMPro
                     // Limit the mesh of the main text object to 65535 vertices and use sub objects for the overflow.
                     if (m_materialReferences[m_currentMaterialIndex].referenceCount < 16383)
                         m_materialReferences[m_currentMaterialIndex].referenceCount += 1;
-                    else if (isUsingFallbackOrAlternativeTypeface)
-                    {
-                        if (materialIndexPairs.TryGetValue(m_currentMaterialIndex, out int prev_fallbackMaterialIndex) && m_materialReferences[prev_fallbackMaterialIndex].referenceCount < 16383)
-                        {
-                            m_currentMaterialIndex = prev_fallbackMaterialIndex;
-                        }
-                        else
-                        {
-                            int fallbackMaterialIndex = MaterialReference.AddMaterialReference(new Material(m_currentMaterial), m_currentFontAsset, ref m_materialReferences, m_materialReferenceIndexLookup);
-                            materialIndexPairs[m_currentMaterialIndex] = fallbackMaterialIndex;
-                            m_currentMaterialIndex = fallbackMaterialIndex;
-                        }
-
-                        m_materialReferences[m_currentMaterialIndex].referenceCount += 1;
-                    }
                     else
                     {
                         m_currentMaterialIndex = MaterialReference.AddMaterialReference(new Material(m_currentMaterial), m_currentFontAsset, ref m_materialReferences, m_materialReferenceIndexLookup);
@@ -4386,8 +4370,8 @@ namespace TMPro
 
                     if ((isWhiteSpace || charCode == 0x200B || charCode == 0x2D || charCode == 0xAD) && (!m_isNonBreakingSpace || ignoreNonBreakingSpace) && charCode != 0xA0 && charCode != 0x2007 && charCode != 0x2011 && charCode != 0x202F && charCode != 0x2060)
                     {
-                        // Case 1391990 - Text after hyphen breaks when the hyphen is connected to the text
-                        if (!(charCode == 0x2D && m_characterCount > 0 && char.IsWhiteSpace(m_textInfo.characterInfo[m_characterCount - 1].character) && m_textInfo.characterInfo[m_characterCount - 1].lineNumber == m_lineNumber))
+                        // Ignore Hyphen (0x2D) when preceded by a whitespace
+                        if ((charCode == 0x2D && m_characterCount > 0 && char.IsWhiteSpace(m_textInfo.characterInfo[m_characterCount - 1].character)) == false)
                         {
                             isFirstWordOfLine = false;
                             shouldSaveHardLineBreak = true;
