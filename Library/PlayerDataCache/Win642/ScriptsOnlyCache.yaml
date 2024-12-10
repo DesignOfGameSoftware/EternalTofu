@@ -1167,4 +1167,4 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/cau/Desktop/p/CrossRoad.exe
+  playerPath: C:/Users/cau/Desktop/EternalTofu/EternalTofu.exe

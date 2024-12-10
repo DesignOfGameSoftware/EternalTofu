@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7133715288481009611}
   m_Layer: 0
   m_Name: 02_Kitchen_01_Chopper
-  m_TagString: Untagged
+  m_TagString: Jeep
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
