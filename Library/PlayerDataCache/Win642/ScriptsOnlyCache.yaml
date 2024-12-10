@@ -144,57 +144,57 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 23800}
+      Script: {instanceID: 1644}
     - Class: 114
-      Script: {instanceID: 23996}
+      Script: {instanceID: 1646}
     - Class: 114
-      Script: {instanceID: 24154}
+      Script: {instanceID: 7584}
     - Class: 114
-      Script: {instanceID: 24398}
+      Script: {instanceID: 7780}
     - Class: 114
-      Script: {instanceID: 24794}
+      Script: {instanceID: 7938}
     - Class: 114
-      Script: {instanceID: 24912}
+      Script: {instanceID: 8182}
     - Class: 114
-      Script: {instanceID: 25290}
+      Script: {instanceID: 8578}
     - Class: 114
-      Script: {instanceID: 25308}
+      Script: {instanceID: 8696}
     - Class: 114
-      Script: {instanceID: 25486}
+      Script: {instanceID: 9074}
     - Class: 114
-      Script: {instanceID: 25622}
+      Script: {instanceID: 9092}
     - Class: 114
-      Script: {instanceID: 25688}
+      Script: {instanceID: 9270}
     - Class: 114
-      Script: {instanceID: 25908}
+      Script: {instanceID: 9406}
     - Class: 114
-      Script: {instanceID: 26888}
+      Script: {instanceID: 9472}
     - Class: 114
-      Script: {instanceID: 27296}
+      Script: {instanceID: 9692}
     - Class: 114
-      Script: {instanceID: 27442}
+      Script: {instanceID: 10672}
     - Class: 114
-      Script: {instanceID: 27542}
+      Script: {instanceID: 11224}
     - Class: 114
-      Script: {instanceID: 27644}
+      Script: {instanceID: 11324}
     - Class: 114
-      Script: {instanceID: 28032}
+      Script: {instanceID: 11426}
     - Class: 114
-      Script: {instanceID: 28052}
+      Script: {instanceID: 11832}
     - Class: 114
-      Script: {instanceID: 28274}
+      Script: {instanceID: 12054}
     - Class: 114
-      Script: {instanceID: 28316}
+      Script: {instanceID: 12096}
     - Class: 114
-      Script: {instanceID: 28444}
+      Script: {instanceID: 12224}
     - Class: 114
-      Script: {instanceID: 28474}
+      Script: {instanceID: 12254}
     - Class: 114
-      Script: {instanceID: 28598}
+      Script: {instanceID: 12378}
     - Class: 114
-      Script: {instanceID: 28888}
+      Script: {instanceID: 12668}
     - Class: 114
-      Script: {instanceID: 29054}
+      Script: {instanceID: 12834}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -222,6 +222,18 @@ ScriptsOnlyBuild:
     - Class: 850595691
       Script: {instanceID: 0}
   scriptHashData:
+  - hash:
+      serializedVersion: 2
+      Hash: 6e8bab63f23b66dbca3cdb8a0615a7b2
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: UIManager
+  - hash:
+      serializedVersion: 2
+      Hash: 7278baa5be5f7b2de357d6b6aae16ceb
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ColliderAdder
   - hash:
       serializedVersion: 2
       Hash: 4ca283281ec992c1aadfc0b6d1d37016
@@ -806,12 +818,6 @@ ScriptsOnlyBuild:
     className: TextMeshSpawner
   - hash:
       serializedVersion: 2
-      Hash: 7278baa5be5f7b2de357d6b6aae16ceb
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: ColliderAdder
-  - hash:
-      serializedVersion: 2
       Hash: 4878e735441f4041539853759559c86f
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
@@ -924,12 +930,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Postprocessing.Runtime
     namespaceName: UnityEngine.Rendering.PostProcessing
     className: PostProcessVolume
-  - hash:
-      serializedVersion: 2
-      Hash: 6e8bab63f23b66dbca3cdb8a0615a7b2
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: UIManager
   - hash:
       serializedVersion: 2
       Hash: 0db922d9c7fbcdd483e9a12324bac273
@@ -1167,4 +1167,4 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/cau/Desktop/EternalTofu/EternalTofu.exe
+  playerPath: "C:/Users/yjshd/OneDrive/\uBC14\uD0D5 \uD654\uBA74/EternalTofu/EternalTofu.exe"

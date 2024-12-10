@@ -21833,7 +21833,7 @@ MonoBehaviour:
   carNpc: {fileID: 1849875836332357052, guid: 5c3b2f97e5ae4a542b61db3ba11403ff, type: 3}
   carNpc2: {fileID: 3105527397977821648, guid: 70aff6ca55ad79544b118701d9ec1295, type: 3}
   positionNPC: {fileID: 4470039006505050468}
-  positionSpawn: right
+  positionSpawn: left
 --- !u!1 &4825217815089948744
 GameObject:
   m_ObjectHideFlags: 0
@@ -27284,7 +27284,7 @@ MonoBehaviour:
   carNpc: {fileID: 3105527397977821648, guid: 70aff6ca55ad79544b118701d9ec1295, type: 3}
   carNpc2: {fileID: 1849875836332357052, guid: 5c3b2f97e5ae4a542b61db3ba11403ff, type: 3}
   positionNPC: {fileID: 6121838919503620067}
-  positionSpawn: left
+  positionSpawn: right
 --- !u!1 &7358201876263940490
 GameObject:
   m_ObjectHideFlags: 0
