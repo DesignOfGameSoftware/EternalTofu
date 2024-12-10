@@ -20,6 +20,7 @@ public class Character : MonoBehaviour
     private Vector3 jumpSquashScale; // 점프 준비 시 크기
     private Vector3 jumpStretchScale; // 점프 시 크기
 
+    private static float prevX;
 
     private int level = 1;           // 초기 레벨 설정
 
@@ -29,6 +30,8 @@ public class Character : MonoBehaviour
 
     public Text levelText;
     public Text difficultyText;
+
+    public GameObject[] spacePrefabs; // 생성할 프리팹
 
     void Start()
     {
@@ -153,6 +156,25 @@ public class Character : MonoBehaviour
 
             // 레벨 증가 후 텍스트를 갱신하여 화면에 반영
             Debug.Log("Level increased to: " + level);
+        }
+        else if (other.CompareTag("Space")) // 'Space' 태그에 도달했을 때
+        {
+
+            int randomIndex = Random.Range(0, spacePrefabs.Length);
+
+            // 충돌한 스페이스의 위치를 가져오기
+            Vector3 spacePosition = other.transform.position;
+
+            // X축을 -0.06으로 조정
+            Debug.Log(spacePosition.x);
+            Debug.Log(prevX);
+            // 프리팹 생성
+            if (spacePosition.x != prevX)
+            {
+                prevX = spacePosition.x;
+                spacePosition.x += 8f;
+                Instantiate(spacePrefabs[randomIndex], spacePosition, Quaternion.identity);
+            }
         }
     }
 
